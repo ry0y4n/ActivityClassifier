@@ -20,7 +20,7 @@ public final class MLManager {
         static let textErrorClassification = "N/A"
     }
 
-    private let activityModel = MyActivityClassifier()
+    private let activityModel = ActivityClassifier()
     private var currentIndexInPredictionWindow: Int
 
     private let predictionWindowDataArray = try? MLMultiArray(shape: [1,
@@ -61,6 +61,8 @@ public final class MLManager {
         let modelPrediction = try? activityModel.prediction(features: dataArray,
                                                             hiddenIn: lastHiddenOutput,
                                                             cellIn: lastHiddenCellOutput)
+        print("\(modelPrediction?.activity): \(modelPrediction?.activityProbability)")
+        
 
         lastHiddenOutput = modelPrediction?.hiddenOut
         lastHiddenCellOutput = modelPrediction?.cellOut

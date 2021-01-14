@@ -30,6 +30,14 @@ class ViewController: UIViewController {
                                                         self.activityLabel.text = classification
                         })
         }
+        
+//        motionManager.accelerometerUpdateInterval = TimeInterval(ModelConstants.sensorsUpdateInterval)
+//            motionManager.gyroUpdateInterval = TimeInterval(ModelConstants.sensorsUpdateInterval)
+//             
+//            // モーションデータをプッシュ型ではなく、プル型で加速度・ジャイロを同時に処理するためにタイマーを使う
+//            motionManager.startAccelerometerUpdates()
+//            motionManager.startGyroUpdates()
+//            timer = Timer.scheduledTimer(timeInterval: ModelConstants. sensorsUpdateInterval, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
     }
 }
 
